@@ -1,5 +1,5 @@
-from CarCamera import CameraStream
-import Utils
+from Camera import CameraStream
+import Util
 
 from tornado.ioloop import PeriodicCallback
 import tornado.websocket
@@ -14,18 +14,18 @@ import os
 
 class LocalServer(tornado.web.Application):
     def __init__(self,params,_car):
-        Utils.print_log("Init. server",1)
+        Util.print_log("Init. server",1)
 
         self.require_login = params['require_login']
         self.cookie = params['cookie']
         self.port = params['port']
         self.car = _car
 
-        self.password = Utils.get_password()
+        self.password = Util.get_password()
         self.camera = self.car.camera.picam
         self.cookie_secret = self.password
         
-        root = Utils.get_root()
+        root = Util.get_root()
         path = os.path.join(root, '../../master')
 
         self.handlers = [
@@ -97,22 +97,22 @@ class WebSocket(tornado.websocket.WebSocketHandler):
             self.application.car.stop()
 
         elif (message == 'self_drive'):
-            Utils.print_log("\nDriiive, "+ self.application.car.name +"!!!!",1)
+            Util.print_log("\nDriiive, "+ self.application.car.name +"!!!!",1)
             self.application.car.drive = True
             self.application.car.self_drive()
 
         elif (message == 'manual'):
-            Utils.print_log("Manual drive",1)
+            Util.print_log("Manual drive",1)
             self.application.car.drive = False
 
         elif (message == 'save_frames'):
-            Utils.print_log("Saving frames",1)
+            Util.print_log("Saving frames",1)
             self.application.car.train_data.save()
             self.application.car.drive = False
 
 
         else:
-            Utils.print_log("Unsupported function: " + message,1)
+            Util.print_log("Unsupported function: " + message,1)
 
     def loop(self):
         """Sends camera images in an infinite loop."""
