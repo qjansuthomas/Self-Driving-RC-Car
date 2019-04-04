@@ -39,7 +39,7 @@ The main program buids an Self Driving Car object and starts a WebServer for the
 
 
 ### Model training
-To generate data, the train frame in a rgb array with the correct command issued by the user. After I gathered a few hundreds of pictures + turn I loaded everything into my computer and used a script to generate even more train data by flipping the images (and adjusting the command accordingly) and also changing the image brightness or colors. 
+To generate data, the train in a rgb array with the correct command issued by the user. After I gathered a few hundreds of pictures + turn I loaded everything into my computer and used a script to generate even more train data by flipping the images (and adjusting the command accordingly) and also changing the image brightness or colors. 
 
 With all that, I trained several variations of a Deep Learning model using Keras+Tensorflow based on [this Nvidia article](https://devblogs.nvidia.com/deep-learning-self-driving-cars/) and explained in [this video](https://www.youtube.com/watch?v=EaY5QiZwSP4). The model has an image normalization to avoid saturation and make gradients work better, 5 layers of a CNN to handle feature engineering, drop out layer to avoid overfitting, and finally 5 fully connected layers for predicting the turn.
 
