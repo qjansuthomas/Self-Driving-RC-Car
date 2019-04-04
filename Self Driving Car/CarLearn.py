@@ -8,7 +8,7 @@ import threading
 import time
 
 """
-Predictions
+CarLearn Class
 """
 class CarLearn(object):
 	def __init__(self,_params):
