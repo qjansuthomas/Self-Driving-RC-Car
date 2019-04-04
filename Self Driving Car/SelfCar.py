@@ -6,6 +6,10 @@ import numpy as np
 import threading
 import time
 
+"""
+SelfCar Class
+"""
+
 class SelfCar(object):
 	def __init__(self,_params):
 		self.drive = False
