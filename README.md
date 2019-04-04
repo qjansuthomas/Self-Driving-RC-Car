@@ -35,21 +35,11 @@ The main program buids an Self Driving Car object and starts a WebServer for the
 
 
 ### Model training
-To generate data, the train in a rgb array with the correct command issued by the user. After I gathered a few hundreds of pictures + turn I loaded everything into my computer and used a script to generate even more train data by flipping the images (and adjusting the command accordingly) and also changing the image brightness or colors. 
 
-With all that, I trained several variations of a Deep Learning model using Keras+Tensorflow based on [this Nvidia article](https://devblogs.nvidia.com/deep-learning-self-driving-cars/) and explained in [this video](https://www.youtube.com/watch?v=EaY5QiZwSP4). The model has an image normalization to avoid saturation and make gradients work better, 5 layers of a CNN to handle feature engineering, drop out layer to avoid overfitting, and finally 5 fully connected layers for predicting the turn.
-
-<p align="center">
- <img width="800" src="https://i.imgur.com/8ds6or1.png">
-<p>
 
 ### Self-driving
-The pre-trained model is loaded on the start of the program. Once the command from any browser comes in, a loop starts the self-driving: the process gathers the most recent img, makes the prediction and turns the car.
 
-<p align="center">
- <img width="800" src="https://i.imgur.com/pKZXgAs.png">
-<p>
 
 ### Object detection
-The stop sign detection was made using Haar feature-based cascade classifiers. OpenCV have a very comprehensive functions and you can train your own model following tutorials like [this](https://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html). This approach is good considering it's very fast and we need speed to detect, classify and take action for every single frame. I used a pre-trained classifier from [here](https://github.com/hamuchiwa/AutoRCCar) and it worked very well for my stop sign.
+
 
