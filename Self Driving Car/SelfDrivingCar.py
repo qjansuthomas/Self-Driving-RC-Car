@@ -1,4 +1,4 @@
-import CarCamera
+import Camera
 import Utils
 
 import RPi.GPIO as GPIO
@@ -6,7 +6,7 @@ import numpy as np
 import threading
 import time
 
-class SelfDrivingCar(object):
+class SelfCar(object):
 	def __init__(self,_params):
 		self.drive = False
 		self.log_photos = False
@@ -22,20 +22,20 @@ class SelfDrivingCar(object):
 		self.default_speed = self.config['SPEED']['default']
 
 
-		# Init Trainning mode
+		# Init Training mode
 		if('train_data_params' in _params): 
-			import TrainData
-			self.train_data = TrainData.TrainData(_params['train_data_params'])
+			import Train
+			self.train_data = Train.Train(_params['train_data_params'])
 			self.train_mode = True
 
 		# Init Self-driving mode
 		if('brain_params' in _params): 
-			from CarBrain import CarBrain
-			self.brain = CarBrain(_params['brain_params'])
+			from CarLearn import CarLearn
+			self.brain = CarLearn(_params['brain_params'])
 		
 		# Init parts
 		self.init_pins()
-		self.camera = CarCamera.CarCamera(_params['camera_params'])
+		self.camera = Camera.Camera(_params['camera_params'])
 
 	"""
 	Init methods
