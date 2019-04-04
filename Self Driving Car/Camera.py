@@ -10,7 +10,7 @@ import cv2
 import io
 
 """
-Camera
+Camera 
 """
 class Camera(object):
 	def __init__(self,_params):
