@@ -29,8 +29,7 @@ class CarBrain(object):
 				move = idx	
 
 		direction = []
-		if move == 0:
-			direction = ['FORWARD']
+
 		elif move == 1:
 			direction = ['RIGHT','FORWARD']
 		elif move == 2:
