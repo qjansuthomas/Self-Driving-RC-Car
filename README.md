@@ -44,6 +44,7 @@ The main program buids an Self Driving Car object and starts a WebServer for the
 ### Self-driving
 The pre-trained model is loaded on the start of the program. Once the command from any browser comes in, a loop starts the self-driving: the process gathers the most recent img, makes the prediction and turns the car.
 
+INSERT IMAGE or VIDEO LINK HERE
 <p align="center">
  <img width="800" src="">
 <p>
