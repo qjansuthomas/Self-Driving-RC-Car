@@ -10,7 +10,7 @@ import time
 """
 Predictions
 """
-class CarBrain(object):
+class CarLearn(object):
 	def __init__(self,_params):
 		Utils.print_log("Init. Model",1)
 		self.model = load_model(_params['model'])
