@@ -5,7 +5,7 @@ import json
 import os
 
 """
-Utils
+Util
 """
 
 def wait(_time):
