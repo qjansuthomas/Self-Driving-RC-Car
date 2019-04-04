@@ -1,5 +1,5 @@
 import Camera
-import Utils
+import Util
 
 import RPi.GPIO as GPIO
 import numpy as np
@@ -41,7 +41,7 @@ class SelfCar(object):
 	Init methods
 	"""
 	def init_pins(self):
-		Utils.print_log("Init. Pins",1)
+		Util.print_log("Init. Pins",1)
 		GPIO.setmode(GPIO.BOARD)
 		GPIO.setwarnings(False)
 		for direction in self.config:
@@ -56,10 +56,10 @@ class SelfCar(object):
 
 	def train(self):
 		self.train_data_params['car'] = self
-		self.train_data = TrainData.TrainData(self.train_data_params)
+		self.train_data = Train.Train(self.train_data_params)
 
 	def self_drive(self):
-		from CarBrain import SelfDriving
+		from CarLearn import SelfDriving
 		SelfDriving(self)
 
 	def set_speed(self,_speed):
@@ -67,7 +67,7 @@ class SelfCar(object):
 
 	def stop(self,_directions=[]):
 		if(len(_directions) == 0):
-			Utils.print_log("Stoping",2)
+			Util.print_log("Stoping",2)
 			directions = self.config
 		else:
 			directions = _directions
@@ -78,7 +78,7 @@ class SelfCar(object):
 		self.current_direction = directions
 
 	def move(self,_directions):
-		Utils.print_log("Move "+_directions[0],2)
+		Util.print_log("Move "+_directions[0],2)
 		if(_directions != self.current_direction):
 
 			#Increase speed when turning to give more juicy to 2 motors
@@ -104,10 +104,10 @@ class SelfCar(object):
 		t = time.time()
 		if(self.log_photos):
 			self.camera.save_frame(_directions[0])
-			t = Utils.print_log('Saved photo',2,t)
+			t = Util.print_log('Saved photo',2,t)
 
 	def shutdown(self):
-		Utils.print_log("Shuting down...")
+		Util.print_log("Shuting down...")
 		GPIO.cleanup()
 		
 		if(self.train_data):
