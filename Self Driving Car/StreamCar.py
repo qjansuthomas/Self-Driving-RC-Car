@@ -12,6 +12,10 @@ import time
 import io
 import os
 
+"""
+Handlers for StreamCar
+"""
+
 class LocalServer(tornado.web.Application):
     def __init__(self,params,_car):
         Util.print_log("Init. server",1)
