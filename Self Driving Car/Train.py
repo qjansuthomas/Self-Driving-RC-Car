@@ -5,9 +5,9 @@ import pickle
 import time
 
 """
-Train Data
+Train
 """
-class TrainData(object):
+class Train(object):
 	def __init__(self,_params):
 		Utils.print_log("Init. Train data",1)
 		self.image_array = [np.zeros((_params['height'],_params['width'],_params['channels']))]
