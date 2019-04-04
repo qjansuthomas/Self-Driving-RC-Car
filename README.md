@@ -25,28 +25,33 @@ The remote control car has 2 DC motors, and I used the L298N module to control t
 The main program buids an Self Driving Car object and starts a WebServer for the remote and camera stream. The car is made of a few parts:
 
 * SelfCar:
-  * Handles interaction with the motors for movement and speed
+  * Interacts with motor and controls car speed.
 * Camera:
-  * Handles camera stream and object detection for the stop sign
+  * The code to make the Camera realize the stop sign / Obstacles.
 * StreamCar:
-  * Creates a webserver to stream the camera and control the car
+  * Creates a server so the phone can connect to the browser and operate the car.
 * Train:
-  * Handles gathering and saving train data
+  * Gathers train data.
 * CarLearn:
-  * Handles the load of the pre-build Machine Learning model and self-driving based on the camera images
+  * Handles the Machine Learning model in Keras+ and the images from the camera to make the car self driving.
 
 ### Challenges
 
 
 ### Model training
+To generate data, the train in a rgb array with the correct command issued by the user. After I gathered a few hundreds of pictures + turn I loaded everything into my computer and used a script to generate even more train data by flipping the images (and adjusting the command accordingly) and also changing the image brightness or colors. 
 
+With all that, I trained several variations of a Deep Learning model using Keras+Tensorflow based on [this Nvidia article](https://devblogs.nvidia.com/deep-learning-self-driving-cars/) and explained in [this video](https://www.youtube.com/watch?v=EaY5QiZwSP4). The model has an image normalization to avoid saturation and make gradients work better, 5 layers of a CNN to handle feature engineering, drop out layer to avoid overfitting, and finally 5 fully connected layers for predicting the turn.
+
+<p align="center">
+ <img width="800" src="https://i.imgur.com/8ds6or1.png">
+<p>
 
 ### Self-driving
 The pre-trained model is loaded on the start of the program. Once the command from any browser comes in, a loop starts the self-driving: the process gathers the most recent img, makes the prediction and turns the car.
 
-INSERT IMAGE or VIDEO LINK HERE
 <p align="center">
- <img width="800" src="">
+ <img width="800" src="https://i.imgur.com/pKZXgAs.png">
 <p>
 
 ### Object detection
