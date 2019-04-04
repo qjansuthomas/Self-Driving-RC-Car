@@ -1,9 +1,5 @@
 # Self Driving RC Car
-A Self-Driving Remote Control Car controlled by a browser. All inside a Raspberry Pi
-
-<p align="center">
- <img width="500" src="https://i.imgur.com/t805DXf.png">
-<p>
+A Self-Driving Remote Control Car controlled by the Android browser. Using a Raspberry Pi.
 
 ## Hardware
 * [Remote control car](https://www.amazon.com/RC-Cars-Boy-Gift-Crawlers/dp/B07D2CZ7QF/ref=sr_1_fkmrnull_3?keywords=toyard+rc+car&qid=1554386210&s=gateway&sr=8-3-fkmrnull)
@@ -12,7 +8,7 @@ A Self-Driving Remote Control Car controlled by a browser. All inside a Raspberr
 * [Smartphone External Battery](https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-Speed-Technology/dp/B01CU1EC6Y/ref=sr_1_1?crid=CJHXP0O4LWGF&keywords=anker+powercore+5000&qid=1554386394&s=gateway&sprefix=anker+power+core+%2Caps%2C156&sr=8-1)
 * 4x AA batteries
 
-### Harware Architecture
+### Hardware Architecture
 The remote control car has 2 DC motors, and I used the L298N module to control them. You can see how to do that [here](https://www.youtube.com/watch?v=AZSiqj0NZgU). Both the motors and the L298N module are powered by 4AA batteries. The Raspberry Pi is powered by an external battery and we have also a Pi Camera with it. Finally, There are a few jump wires connecting the GPIO from the PI to the L298N module.
 
 <p align="center">
@@ -28,15 +24,15 @@ The remote control car has 2 DC motors, and I used the L298N module to control t
 ### Software Architecture
 The main program buids an Self Driving Car object and starts a WebServer for the remote and camera stream. The car is made of a few parts:
 
-* SelfDrivinCar:
+* SelfCar:
   * Handles interaction with the motors for movement and speed
-* CarCamera:
+* Camera:
   * Handles camera stream and object detection for the stop sign
-* WebServer:
+* StreamCar:
   * Creates a webserver to stream the camera and control the car
-* TrainData:
+* Train:
   * Handles gathering and saving train data
-* CarBrain:
+* CarLearn:
   * Handles the load of the pre-build Machine Learning model and self-driving based on the camera images
 
 ### Challenges
