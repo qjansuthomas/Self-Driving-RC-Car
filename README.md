@@ -1,5 +1,5 @@
 # Self Driving RC Car
-A Self-Driving Remote Control Car controlled by the Android browser. Using a Raspberry Pi.
+A Self-Driving Remote Control Car controlled by the Android browser by using a Raspberry Pi.
 
 ## Hardware
 * [Remote control car](https://www.amazon.com/RC-Cars-Boy-Gift-Crawlers/dp/B07D2CZ7QF/ref=sr_1_fkmrnull_3?keywords=toyard+rc+car&qid=1554386210&s=gateway&sr=8-3-fkmrnull)
