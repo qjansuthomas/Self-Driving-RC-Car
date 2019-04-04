@@ -10,9 +10,9 @@ import cv2
 import io
 
 """
-Car Camera
+Camera
 """
-class CarCamera(object):
+class Camera(object):
 	def __init__(self,_params):
 		Utils.print_log("Init. Camera",1)
 
