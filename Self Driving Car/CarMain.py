@@ -3,11 +3,9 @@ import argparse
 import time
 import json
 import os
-
 """
 CarMain Class
 """
-
 def wait(_time):
 	time.sleep(_time)
 
