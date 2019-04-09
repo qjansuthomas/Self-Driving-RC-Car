@@ -13,9 +13,7 @@ The remote control car has 2 DC motors, and we used the L298N module to control 
 
 <p align="left">
  <img width="500" src="https://imgur.com/kwHJBE2.jpg">
-<p>
-
-<p align="right">
+<p> <p align="right">
  <img width="500" src="https://imgur.com/UZy1jFc.jpg">
 <p>
 
