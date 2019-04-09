@@ -12,9 +12,10 @@ A Self-Driving Remote Control Car controlled by the Android browser by using a R
 The remote control car has 2 DC motors, and we used the L298N module to control them. Both the motors and the L298N module are powered by 4AA batteries. The Raspberry Pi is powered by an external battery and we have also a Pi Camera with it. Finally, There are a few jump wires connecting the GPIO from the PI to the L298N module.
 
 <p align="left">
- <img width="500" src="https://imgur.com/kwHJBE2.jpg">
-<p> <p align="right">
- <img width="500" src="https://imgur.com/UZy1jFc.jpg">
+ <img width="300" src="https://imgur.com/kwHJBE2.jpg">
+<p> 
+<p align="right">
+ <img width="300" src="https://imgur.com/UZy1jFc.jpg">
 <p>
 
 
