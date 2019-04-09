@@ -14,7 +14,7 @@ Camera
 """
 class Camera(object):
 	def __init__(self,_params):
-		Utils.print_log("Init. Camera",1)
+		CarMain.print_log("Init. Camera",1)
 
 		self.stream = True
 		self.stop_detected = False
@@ -31,7 +31,7 @@ class Camera(object):
 		time.sleep(1) # Gives a second so camera warms up
 
 	def save_frame(self,_turn):
-		name = str(Utils.ms_epoch())+":"+str(_turn)
+		name = str(CarMain.ms_epoch())+":"+str(_turn)
 		self.picam.capture(self.path+"/train_photos/"+name+".jpg")
 
 """
