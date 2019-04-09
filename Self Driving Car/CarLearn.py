@@ -1,4 +1,4 @@
-import Util
+import CarMain
 
 import keras.backend.tensorflow_backend
 from keras.backend import clear_session
@@ -12,7 +12,7 @@ CarLearn Class
 """
 class CarLearn(object):
 	def __init__(self,_params):
-		Utils.print_log("Init. Model",1)
+		CarMain.print_log("Init. Model",1)
 		self.model = load_model(_params['model'])
 		self.graph = tf.get_default_graph()
 			
@@ -20,7 +20,7 @@ class CarLearn(object):
 		t = time.time()
 		
 		res =  self.model.predict(_image, batch_size=1)
-		t = Utils.print_log('Model Predict',3,t)
+		t = CarMain.print_log('Model Predict',3,t)
 		
 		max_val = 0
 		for idx,val in enumerate(res[0]):
@@ -68,6 +68,6 @@ class SelfDriving(object):
 					self.car.stop(self.car.current_direction)
 					self.car.move(direction)
 				
-				Utils.print_log('Driving '+direction[0],2)
+				CarMain.print_log('Driving '+direction[0],2)
 				print("\n")
 		self.car.stop()
