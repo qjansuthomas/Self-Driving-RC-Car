@@ -47,7 +47,7 @@ class Vehicle:
         assert type(outputs) is list, "outputs is not a list: %r" % outputs
         assert type(threaded) is bool, "threaded is not a boolean: %r" % threaded
         
-        #Inputting text inputs for user
+        #Text inputs for user
         p = part
         logger.info('Adding part {}.'.format(p.__class__.__name__))
         entry = dict()
