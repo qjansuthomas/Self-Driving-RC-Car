@@ -15,9 +15,7 @@ class Config:
         pass
 
     def from_pyfile(self, filename, silent=False):
-        """
-        Read config class from a file.
-        """
+        # Read config class from a file.
         d = types.ModuleType('config')
         d.__file__ = filename
         try:
@@ -30,17 +28,13 @@ class Config:
         return True
 
     def from_object(self, obj):
-        """
-        Read config class from another object.
-        """
+        # Read config class from another object.
         for key in dir(obj):
             if key.isupper():
                 setattr(self, key, getattr(obj, key))
 
     def __str__(self):
-        """
-        Get a string representation of the config class.
-        """
+        #Get a string representation of the config class.
         result = []
         for key in dir(self):
             if key.isupper():
@@ -49,9 +43,7 @@ class Config:
 
 
 def load_config(config_path=None):
-    """
-    Load the config from a file and return the config class.
-    """
+    # Load the config from a file and return the config class.
     if config_path is None:
         import __main__ as main
         main_path = os.path.dirname(os.path.realpath(main.__file__))
