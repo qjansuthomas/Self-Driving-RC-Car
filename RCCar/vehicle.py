@@ -18,6 +18,7 @@ logger = get_logger(__name__)
 
 
 class Vehicle:
+    # Instancing variables
     def __init__(self, mem=None):
         if not mem:
             mem = Memory()
@@ -28,9 +29,9 @@ class Vehicle:
 
     def add(self, part, inputs=[], outputs=[],
             threaded=False, run_condition=None):
+        
+        # Method to add a part to the vehicle drive loop.
         """
-        Method to add a part to the vehicle drive loop.
-
         Parameters
         ----------
             inputs : list
@@ -45,7 +46,8 @@ class Vehicle:
         assert type(inputs) is list, "inputs is not a list: %r" % inputs
         assert type(outputs) is list, "outputs is not a list: %r" % outputs
         assert type(threaded) is bool, "threaded is not a boolean: %r" % threaded
-
+        
+        #Inputting text inputs for user
         p = part
         logger.info('Adding part {}.'.format(p.__class__.__name__))
         entry = dict()
@@ -61,9 +63,9 @@ class Vehicle:
         self.parts.append(entry)
 
     def start(self, rate_hz=10, max_loop_count=None):
+        
+        #Start vehicle's main drive loop.
         """
-        Start vehicle's main drive loop.
-
         This is the main thread of the vehicle. It starts all the new
         threads for the threaded parts then starts an infinit loop
         that runs each part and updates the memory.
@@ -98,7 +100,7 @@ class Vehicle:
 
                 self.update_parts()
 
-                # stop drive loop if loop_count exceeds max_loopcount
+                #stop drive loop if loop_count exceeds max_loopcount
                 if max_loop_count and loop_count > max_loop_count:
                     self.on = False
 
@@ -112,9 +114,7 @@ class Vehicle:
             self.stop()
 
     def update_parts(self):
-        """
-        loop over all parts
-        """
+        # loop over all parts.
         for entry in self.parts:
             # don't run if there is a run condition that is False
             run = True
@@ -139,6 +139,7 @@ class Vehicle:
                     self.mem.put(entry['outputs'], outputs)
 
     def stop(self):
+        #Shuts off vehicle.
         logger.info('Shutting down vehicle and its parts...')
         for entry in self.parts:
             try:
