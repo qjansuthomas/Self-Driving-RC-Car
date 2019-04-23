@@ -24,16 +24,11 @@ The remote control car has 2 DC motors, and we used the PCA board to control the
 ### Software Architecture
 The main program buids an Self Driving Car object and starts a WebServer for the remote and camera stream. The car is made of a few parts:
 
-* SelfCar:
+* Vehicle:
   * Interacts with motor and controls car speed.
-* Camera:
+* Opencv:
   * The code to make the Camera realize the stop sign / Obstacles.
-* StreamCar:
-  * Creates a server so the phone can connect to the browser and operate the car.
-* Train:
-  * Gathers train data.
-* CarLearn:
-  * Handles the Machine Learning model in Keras+ and the images from the camera to make the car self driving.
+
 
 ### Challenges
 
