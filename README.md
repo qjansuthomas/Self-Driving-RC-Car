@@ -4,12 +4,12 @@ A Self-Driving Remote Control Car controlled by the Android browser by using a R
 ## Hardware
 * [Remote control car](https://www.amazon.com/RC-Cars-Boy-Gift-Crawlers/dp/B07D2CZ7QF/ref=sr_1_fkmrnull_3?keywords=toyard+rc+car&qid=1554386210&s=gateway&sr=8-3-fkmrnull)
 * Raspberry Pi 3 Model B+
-* [L28N Dual Motor Controller](https://www.amazon.com/Qunqi-2Packs-Controller-Stepper-Arduino/dp/B01M29YK5U/ref=sr_1_2_sspa?crid=3IT1MD6DE13M8&keywords=qunqi+l298n+motor+drive+controller&qid=1554386315&s=gateway&sprefix=qunqi+%2Caps%2C150&sr=8-2-spons&psc=1)
+* [PCA9685 16 Channel 12 Bit PWM Servo Driver](https://www.amazon.com/gp/product/B014KTSMLA/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
 * [Smartphone External Battery](https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-Speed-Technology/dp/B01CU1EC6Y/ref=sr_1_1?crid=CJHXP0O4LWGF&keywords=anker+powercore+5000&qid=1554386394&s=gateway&sprefix=anker+power+core+%2Caps%2C156&sr=8-1)
 * 4x AA batteries
 
 ### Hardware Architecture
-The remote control car has 2 DC motors, and we used the L298N module to control them. Both the motors and the L298N module are powered by 4AA batteries. The Raspberry Pi is powered by 4.8-volt battery and we have also a Pi Camera with it. Finally, There are a few jump wires connecting the GPIO from the PI to the L298N module.
+The remote control car has 2 DC motors, and we used the PCA board to control them. Both the motors and the L298N module are powered by 4AA batteries. The Raspberry Pi is powered by 4.8-volt battery and we have also a Pi Camera with it. Finally, There are a few jump wires connecting the GPIO from the PI to the PCA board.
 
 <p align="center">
  <img width="400" src="https://imgur.com/kwHJBE2.jpg">
